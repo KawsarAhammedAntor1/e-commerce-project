@@ -1,0 +1,294 @@
+/* --- Layout --- */
+.checkout-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    /* Space for bottom nav */
+}
+
+.checkout-left {
+    flex: 2;
+    min-width: 300px;
+}
+
+.checkout-right {
+    flex: 1;
+    min-width: 280px;
+}
+
+.checkout-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+.checkout-section h3 {
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- Forms --- */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff9800;
+    outline: none;
+    background: #fff;
+}
+
+/* --- Payment Methods Grid (Fixed for 2 items) --- */
+.payment-methods-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal columns for COD and bKash */
+    gap: 15px;
+}
+
+.payment-card {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Hide actual radio button */
+.payment-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: #fff;
+    height: 100%;
+    min-height: 100px;
+}
+
+.payment-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.card-content span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Selected State */
+.payment-card input[type="radio"]:checked+.card-content {
+    border-color: #ff9800;
+    background-color: #fff8e1;
+    box-shadow: 0 2px 5px rgba(255, 152, 0, 0.2);
+}
+
+.payment-card input[type="radio"]:checked+.card-content .payment-icon {
+    color: #ff9800;
+}
+
+/* --- Order Summary Items --- */
+.checkout-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.checkout-item:last-child {
+    border-bottom: none;
+}
+
+.item-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #f0f0f0;
+}
+
+.item-info {
+    flex: 1;
+    /* Takes up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+}
+
+.item-qty {
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0;
+}
+
+.item-price {
+    font-weight: 700;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* --- Totals & Button --- */
+.totals-summary {
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.summary-item.total {
+    border-top: 2px solid #eee;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #d32f2f;
+}
+
+.confirm-order-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.confirm-order-btn:hover {
+    background-color: #f57c00;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    .checkout-container {
+        flex-direction: column;
+    }
+
+    .checkout-right {
+        order: -1;
+    }
+
+    /* Stack payment methods on very small screens */
+    .payment-methods-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Dark Mode Overrides --- */
+body.dark-mode .checkout-section {
+    background: #2c2c2c;
+    border-color: #444;
+}
+
+body.dark-mode .checkout-section h3 {
+    color: #f0f0f0;
+    border-bottom-color: #444;
+}
+
+body.dark-mode .form-group label {
+    color: #ccc;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: #333;
+    border-color: #555;
+    color: #fff;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+    border-color: #ff9800;
+}
+
+body.dark-mode .payment-card .card-content {
+    background: #333;
+    border-color: #555;
+}
+
+body.dark-mode .payment-card .card-content span {
+    color: #ddd;
+}
+
+body.dark-mode .payment-card input[type="radio"]:checked+.card-content {
+    background-color: #4a3b2a;
+    /* Darker orange tint */
+    border-color: #ff9800;
+}
+
+body.dark-mode .checkout-item {
+    border-bottom-color: #444;
+}
+
+body.dark-mode .item-name {
+    color: #f0f0f0;
+}
+
+body.dark-mode .item-price {
+    color: #f0f0f0;
+}
+
+body.dark-mode .summary-item {
+    color: #ccc;
+}
+
+body.dark-mode .summary-item.total {
+    border-top-color: #444;
+    color: #ff6666;
+}

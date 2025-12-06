@@ -1,0 +1,329 @@
+/* Main Banner */
+.promo-banner-container {
+    width: 100%;
+    /* Limit height to crop bottom white space */
+    max-height: 200px;
+    overflow: hidden;
+    position: relative;
+    /* Center aligns content if image is narrower than container (unlikely with width:100%) */
+    display: flex;
+    justify-content: center;
+}
+
+.main-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Pull image up to crop top white space */
+    margin-top: -30px;
+    /* Ensure no other interference */
+    max-width: none;
+    border-radius: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .promo-banner-container {
+        max-height: 120px;
+        /* Smaller height for mobile */
+    }
+
+    .main-banner {
+        margin-top: -15px;
+        /* Smaller cut for mobile */
+    }
+}
+
+/* All Categories */
+.top-categories {
+    margin-top: 0.5rem;
+    /* Reduced from 1.5rem to remove space below banner */
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 items per row on mobile */
+    gap: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 items per row on larger screens */
+    }
+}
+
+.category-item {
+    cursor: pointer;
+    display: flex;
+    /* Use flex to center image and text */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    /* Reduced padding around the item */
+    transition: background-color 0.2s ease;
+}
+
+.cat-img {
+    width: 70px;
+    /* Reduced size */
+    height: 70px;
+    /* Reduced size */
+    border-radius: 50%;
+    /* Makes the container circular */
+    overflow: hidden;
+    /* Ensures image respects the circular shape */
+    margin-bottom: 0.25rem;
+    /* Reduced margin */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    /* To center the image inside */
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white-color);
+    /* Background for the circular div */
+}
+
+.cat-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures image covers the circular area */
+    border-radius: 50%;
+    /* Ensure image itself is also circular within the div */
+}
+
+.category-item p {
+    font-size: 0.8rem;
+    color: var(--light-text);
+    margin: 0;
+    /* Remove default paragraph margin */
+    line-height: 1.2;
+    /* Adjust line height for better spacing */
+}
+
+/* New General Section Container */
+.section-container {
+    margin-top: 1.5rem;
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+/* Countdown Timer for Hot Deals (if still used) */
+.countdown-timer {
+    background-color: var(--primary-orange);
+    color: var(--white-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+/* Product Card Styling */
+.product-card {
+    background-color: var(--white-color);
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ensures content stays within rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    /* For positioning discount badge */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-img {
+    width: 100%;
+    height: 120px;
+    /* Fixed height for product images */
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.product-info {
+    padding: 0.5rem;
+    flex-grow: 1;
+    /* Allows info section to grow and push button down */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    height: 3em;
+    /* Limit title to 2 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product-info .price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    /* Pushes price to the bottom if title is short */
+    margin-bottom: 0.5rem;
+    /* Space before button */
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+.new-price {
+    color: var(--primary-orange);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Discount Badge */
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: deeppink;
+    /* As requested */
+    color: var(--white-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1;
+    z-index: 10;
+    /* Ensure it's above the image */
+}
+
+
+/* Hot Deals Horizontal Scroll */
+.product-grid-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
+    /* Add padding for scrollbar */
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+.product-grid-scroll::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.product-grid-scroll .product-card {
+    flex: 0 0 150px;
+    /* Fixed width for items in scrollable list */
+}
+
+/* All Products Grid */
+.product-grid-full {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 items per row on mobile */
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .product-grid-full {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 items per row on larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-grid-full {
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 items per row on desktop */
+    }
+}
+
+/* No Results Message Styling */
+.no-results {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-results img {
+    margin-bottom: 1rem;
+}
+
+.no-results h3 {
+    font-size: 1.2rem;
+    color: var(--dark-text);
+    margin-bottom: 0.5rem;
+}
+
+.no-results p {
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+}
+
+.no-results .btn-order-green {
+    /* Updated selector */
+    background-color: var(--primary-orange);
+    /* Keep orange for this specific button */
+    color: var(--white-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+    width: auto;
+    /* Override 100% width for this button */
+}
+
+.no-results .btn-order-green:hover {
+    background-color: #e65c00;
+}
+
+/* Style for Live Search Overlay */
+#search-overlay {
+    background: var(--background-color);
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 110px;
+    /* Adjusted for header + search bar height */
+    z-index: 999;
+    padding: 20px;
+}

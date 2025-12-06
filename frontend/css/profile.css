@@ -1,0 +1,387 @@
+/* --- Global Styles for Profile Page --- */
+body {
+    background-color: var(--background-color);
+    /* Default from global: #f4f4f4 */
+    color: var(--dark-text);
+    /* Default from global: #333 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Main Content Layout --- */
+.main-content {
+    padding: 80px 20px 100px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--primary-orange);
+    /* Using global variable */
+    border-bottom: 2px solid #ddd;
+    /* Light mode border */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Profile Card Styles --- */
+.profile-card {
+    background: var(--white-color);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Lighter shadow for light mode */
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+
+.profile-avatar i {
+    font-size: 4rem;
+    color: var(--primary-orange);
+    margin-bottom: 15px;
+}
+
+.profile-card h2 {
+    margin: 10px 0;
+    font-size: 1.8rem;
+    color: var(--dark-text);
+}
+
+.profile-card p {
+    color: var(--light-text);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* --- Logout Button --- */
+.logout-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn:hover {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Orders Section (New Card Design) --- */
+.my-orders-section {
+    margin-top: 30px;
+}
+
+.orders-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual Order Card */
+.order-card {
+    background-color: var(--white-color);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.order-card:hover {
+    transform: translateY(-2px);
+    border-color: #ccc;
+}
+
+/* Order Header (ID, Total, Payment Badge) */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.order-id {
+    font-weight: bold;
+    color: var(--primary-orange);
+    font-size: 1.1rem;
+}
+
+.order-date {
+    font-size: 0.85rem;
+    color: var(--light-text);
+    display: block;
+    margin-top: 4px;
+}
+
+/* Payment Badges */
+.payment-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge-cod {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: #e65100;
+    border: 1px solid #ffe0b2;
+}
+
+.badge-paid {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+/* Order Items List */
+.order-items {
+    margin-bottom: 15px;
+}
+
+.order-item-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: var(--dark-text);
+    margin-bottom: 5px;
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.order-item-row:last-child {
+    border-bottom: none;
+}
+
+.order-total {
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--dark-text);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #ddd;
+}
+
+/* --- Timeline Styles (New Feature) --- */
+.order-timeline {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.timeline-title {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 20px;
+    /* Space for the line */
+}
+
+/* The vertical line */
+.timeline-steps::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 7px;
+    /* Align with dots */
+    width: 2px;
+    background-color: #ddd;
+}
+
+.timeline-step {
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.timeline-step:last-child {
+    padding-bottom: 0;
+}
+
+/* The Dots */
+.timeline-dot {
+    position: absolute;
+    left: -20px;
+    /* Align on the line */
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: 2px solid #fff;
+    z-index: 1;
+}
+
+/* Active State (Completed Steps) */
+.timeline-step.active .timeline-dot {
+    background-color: var(--primary-green);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+.timeline-step.active .step-label {
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+/* Text Styles */
+.step-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.step-label {
+    font-size: 0.95rem;
+    color: var(--light-text);
+}
+
+.step-time {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 2px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    .main-content {
+        padding-top: 90px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .payment-badge {
+        align-self: flex-start;
+        margin-top: 5px;
+    }
+}
+
+/* ========================================= */
+/*             DARK MODE STYLES              */
+/* ========================================= */
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .section-title {
+    color: #ff9800;
+    /* Keep orange */
+    border-bottom-color: #333;
+}
+
+body.dark-mode .profile-card {
+    background: linear-gradient(145deg, #1e1e1e, #252525);
+    border-color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .profile-card h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .profile-card p {
+    color: #aaaaaa;
+}
+
+body.dark-mode .order-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .order-card:hover {
+    border-color: #444;
+}
+
+body.dark-mode .order-header {
+    border-bottom-color: #333;
+}
+
+body.dark-mode .order-date {
+    color: #888;
+}
+
+body.dark-mode .badge-cod {
+    background-color: rgba(255, 152, 0, 0.15);
+    color: #ff9800;
+    border-color: #ff9800;
+}
+
+body.dark-mode .badge-paid {
+    background-color: rgba(76, 175, 80, 0.15);
+    color: #4caf50;
+    border-color: #4caf50;
+}
+
+body.dark-mode .order-item-row {
+    color: #ddd;
+    border-bottom-color: #2a2a2a;
+}
+
+body.dark-mode .order-total {
+    color: #fff;
+    border-top-color: #444;
+}
+
+body.dark-mode .order-timeline {
+    border-top-color: #333;
+}
+
+body.dark-mode .timeline-title {
+    color: #aaa;
+}
+
+body.dark-mode .timeline-steps::before {
+    background-color: #333;
+}
+
+body.dark-mode .timeline-dot {
+    background-color: #333;
+    border-color: #1e1e1e;
+}
+
+body.dark-mode .step-label {
+    color: #888;
+}
+
+body.dark-mode .step-time {
+    color: #666;
+}

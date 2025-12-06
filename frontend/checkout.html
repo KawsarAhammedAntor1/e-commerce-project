@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Girl's Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+
+<body>
+    <div id="toast-container"></div>
+
+    <header class="header"></header>
+
+    <div class="main-content">
+        <h1 class="section-title">Checkout</h1>
+
+        <div class="checkout-container">
+            <div class="checkout-left">
+
+                <div class="checkout-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Shipping Details</h3>
+                    <form id="shipping-form">
+                        <div class="form-group">
+                            <label for="shipping-name">Full Name</label>
+                            <input type="text" id="shipping-name" placeholder="Enter full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="shipping-phone">Phone Number</label>
+                            <input type="tel" id="shipping-phone" placeholder="Ex: 017xxxxxxxx" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="shipping-address">Full Address</label>
+                            <textarea id="shipping-address" rows="2" placeholder="House, Road, Area..."
+                                required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="shipping-city">City / Area</label>
+                            <input type="text" id="shipping-city" placeholder="Ex: Dhaka" required>
+                        </div>
+
+                        <!-- Delivery Location Selection -->
+                        <div class="form-group" style="margin-top: 15px;">
+                            <label style="display: block; margin-bottom: 10px; font-weight: 600;">Delivery
+                                Location</label>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="radio" name="deliveryLocation" value="100" checked
+                                        style="margin-right: 8px;">
+                                    Inside Dhaka (100 BDT)
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="radio" name="deliveryLocation" value="150" style="margin-right: 8px;">
+                                    Outside Dhaka (150 BDT)
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="checkout-section">
+                    <h3><i class="fas fa-credit-card"></i> Payment Method</h3>
+                    <div class="payment-methods-grid">
+
+                        <label class="payment-card">
+                            <input type="radio" name="paymentMethod" value="cod" checked>
+                            <div class="card-content">
+                                <i class="fas fa-hand-holding-usd payment-icon"></i>
+                                <span>Cash on Delivery</span>
+                            </div>
+                        </label>
+
+                        <label class="payment-card">
+                            <input type="radio" name="paymentMethod" value="bkash">
+                            <div class="card-content">
+                                <i class="fas fa-mobile-alt payment-icon" style="color: #e2136e;"></i>
+                                <span>bKash</span>
+                            </div>
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-right">
+                <div class="checkout-section summary-card">
+                    <h3>Order Summary</h3>
+                    <div id="checkout-items-container" class="order-items-list">
+                        <p style="text-align: center; color: #888;">Loading cart items...</p>
+                    </div>
+
+                    <div class="totals-summary">
+                        <div class="summary-item">
+                            <span>Subtotal:</span>
+                            <span id="subtotal-display">0.00 BDT</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Delivery Charge:</span>
+                            <span id="delivery-charge-display">0.00 BDT</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total Payable:</span>
+                            <span id="grand-total-display">0.00 BDT</span>
+                        </div>
+                        <button id="place-order-btn" class="confirm-order-btn">Confirm Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav"></nav>
+
+    <script src="js/global.js"></script>
+    <script src="js/checkout.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load Header
+            fetch('header.html')
+                .then(res => res.ok ? res.text() : null)
+                .then(data => {
+                    if (data) {
+                        document.querySelector('.header').innerHTML = data;
+                        if (window.restoreSession) window.restoreSession();
+                        if (window.updateCartCount) window.updateCartCount();
+                    }
+                });
+
+            // Load Footer
+            fetch('footer.html')
+                .then(res => res.ok ? res.text() : null)
+                .then(data => {
+                    if (data) document.querySelector('.bottom-nav').innerHTML = data;
+                });
+
+            // Trigger Checkout Logic
+            if (window.loadCheckout) {
+                window.loadCheckout();
+            } else {
+                setTimeout(() => { if (window.loadCheckout) window.loadCheckout(); }, 500);
+            }
+        });
+    </script>
+</body>
+
+</html>

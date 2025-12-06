@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Girl's Fashion - Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        /* Emergency Inline Styles Removed - centralized in global.css */
+    </style>
+</head>
+
+<body>
+
+    <div class="overlay" id="overlay"></div>
+    <nav class="side-nav" id="side-nav">
+        <div class="side-nav-header">
+            <h2 class="side-nav-logo">Girl's Fashion</h2>
+            <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="side-nav-list">
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="product.html">
+                    <i class="fas fa-box"></i>
+                    <span>Product</span>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact Us</span>
+                </a>
+            </li>
+            <li>
+                <a href="login.html">
+                    <i class="fas fa-user"></i>
+                    <span>Login / Sign Up</span>
+                </a>
+            </li>
+            <li>
+                <a href="admin_login.html" id="side-nav-admin-link">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Admin</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <div class="header-top">
+            <div class="header-left">
+                <button class="header-icon" id="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="header-logo">Girl's Fashion</h1>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="profile.html">Profile</a>
+                <a href="product.html">Product</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+                <a href="admin_login.html">Admin</a>
+            </nav>
+
+            <div class="header-right">
+                <button class="header-icon" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="cart.html" class="header-icon cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+        <div class="header-search">
+            <input type="text" placeholder="Search Product...">
+            <button class="search-btn">Search</button>
+        </div>
+    </header>
+
+    <div id="search-overlay" style="display:none;"></div>
+
+    <div class="promo-banner-container">
+        <img src="images/Banner.jpg" class="main-banner" alt="Girl's Fashion">
+    </div>
+
+    <main class="main-content">
+        <div id="main-page-content">
+
+            <section class="top-categories">
+                <h2 class="section-title">All Categories</h2>
+                <div class="category-grid">
+                    <div class="category-item"
+                        onclick="window.location.href='product.html?category=' + encodeURIComponent('Mens Shopping')">
+                        <div class="cat-img"> <img src="images/1.jpg" alt="Mens Shopping"> </div>
+                        <p>Mens Shopping</p>
+                    </div>
+                    <div class="category-item"
+                        onclick="window.location.href='product.html?category=' + encodeURIComponent('Womens Fashion')">
+                        <div class="cat-img"> <img src="images/2.jpg" alt="Womens Fashion"> </div>
+                        <p>Womens Fashion</p>
+                    </div>
+                    <div class="category-item"
+                        onclick="window.location.href='product.html?category=' + encodeURIComponent('Gadgets & Electronics')">
+                        <div class="cat-img"> <img src="images/3.jpg" alt="Gadgets & Electronics"> </div>
+                        <p>Gadgets & Electronics</p>
+                    </div>
+                    <div class="category-item"
+                        onclick="window.location.href='product.html?category=' + encodeURIComponent('Home Decor')">
+                        <div class="cat-img"> <img src="images/4.jpg" alt="Home Decor"> </div>
+                        <p>Home Decor</p>
+                    </div>
+                    <div class="category-item"
+                        onclick="window.location.href='product.html?category=' + encodeURIComponent('Watch')">
+                        <div class="cat-img"> <img src="images/5.jpg" alt="Watch">
+                        </div>
+                        <p>Watch</p>
+                    </div>
+                    <div class="category-item"
+                        onclick="window.location.href='product.html?category=' + encodeURIComponent('Women Clothing')">
+                        <div class="cat-img"> <img src="images/6.jpg" alt="Women Clothing"> </div>
+                        <p>Women Clothing</p>
+                    </div>
+                    <div class="category-item"
+                        onclick="window.location.href='product.html?category=' + encodeURIComponent('Saree')">
+                        <div class="cat-img"> <img src="images/7.jpg" alt="Saree">
+                        </div>
+                        <p>Saree</p>
+                    </div>
+                    <div class="category-item"
+                        onclick="window.location.href='product.html?category=' + encodeURIComponent('Shalwar Kameez')">
+                        <div class="cat-img"> <img src="images/8.jpg" alt="Shalwar Kameez"> </div>
+                        <p>Shalwar Kameez</p>
+                    </div>
+                    <div class="category-item"
+                        onclick="window.location.href='product.html?category=' + encodeURIComponent('Ladies Bag')">
+                        <div class="cat-img"> <img src="images/9.jpg" alt="Ladies Bag"> </div>
+                        <p>Ladies Bag</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="all-products" class="section-container" style="padding-bottom: 80px;">
+                <div class="section-header">
+                    <h3>All Products</h3>
+                </div>
+
+                <div class="product-grid" id="products-container">
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <nav class="bottom-nav">
+        <a href="category.html" class="nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Category</span>
+        </a>
+        <a href="https://www.facebook.com/GirlsFashionBD2" class="nav-item">
+            <i class="fas fa-comment-dots"></i>
+            <span>Message</span>
+        </a>
+        <a href="index.html" class="nav-item home-button">
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="cart.html" class="nav-item" id="footer-cart-link">
+            <i class="fas fa-shopping-bag"></i>
+            <span>Cart</span>
+        </a>
+        <a href="login.html" class="nav-item" id="bottom-nav-login">
+            <i class="fas fa-user"></i>
+            <span>Login</span>
+        </a>
+    </nav>
+
+    <script src="js/global.js"></script>
+
+</body>
+
+</html>

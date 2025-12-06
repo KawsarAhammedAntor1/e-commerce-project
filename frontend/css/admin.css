@@ -1,0 +1,451 @@
+/* --- Admin Global Layout --- */
+body {
+    background-color: #f4f6f8;
+}
+
+.admin-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+    /* Removed Grid Layout */
+}
+
+/* --- Tabs --- */
+.admin-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #e0e0e0;
+    color: #555;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.tab-btn:hover {
+    background: #d5d5d5;
+}
+
+.tab-btn.active {
+    background: #ff9800;
+    color: white;
+    box-shadow: 0 2px 5px rgba(255, 152, 0, 0.3);
+}
+
+/* --- Section Visibility --- */
+.admin-section {
+    display: none;
+    /* Hidden by default */
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.admin-section.active-section {
+    display: block;
+    /* Show only active */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Buttons (Home & Logout) --- */
+.home-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.home-btn:hover {
+    color: #ff9800;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background-color: #b71c1c;
+}
+
+/* --- Admin Sections --- */
+.admin-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    color: #444;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+/* --- Forms --- */
+.admin-form .form-group {
+    margin-bottom: 15px;
+}
+
+.admin-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background-color: #f57c00;
+}
+
+/* --- Order Management Styles --- */
+.order-card {
+    border: 1px solid #eee;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.order-info h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.order-info p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Payment Badges */
+.badge {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge-cod {
+    background: #fff3e0;
+    color: #ef6c00;
+    border: 1px solid #ffe0b2;
+}
+
+.badge-online {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+/* Order Items */
+.order-items {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+/* Timeline Styles */
+.timeline-container {
+    margin-top: 15px;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.timeline-title {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.timeline-entry {
+    font-size: 0.9rem;
+    padding-left: 10px;
+    border-left: 3px solid #ddd;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.timeline-entry strong {
+    color: #333;
+}
+
+/* Status Control */
+.status-control {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+
+.update-btn {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* --- Product List --- */
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.delete-btn {
+    background-color: #ffebee;
+    color: #d32f2f;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #ffcdd2;
+}
+
+/* --- Dark Mode Overrides --- */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-mode .admin-container {
+    background-color: transparent;
+    /* Explicitly set to transparent or remove if not needed */
+}
+
+body.dark-mode .dashboard-title {
+    color: #f0f0f0;
+}
+
+body.dark-mode .home-btn {
+    color: #f0f0f0;
+}
+
+body.dark-mode .home-btn:hover {
+    color: #ff9800;
+}
+
+body.dark-mode .admin-section {
+    background: #2c2c2c;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .section-title {
+    color: #ddd;
+    border-bottom-color: #444;
+}
+
+body.dark-mode .admin-form label {
+    color: #ccc;
+}
+
+body.dark-mode .admin-form input,
+body.dark-mode .admin-form select,
+body.dark-mode .admin-form textarea {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+}
+
+body.dark-mode .admin-form input:focus,
+body.dark-mode .admin-form select:focus,
+body.dark-mode .admin-form textarea:focus {
+    border-color: #ff9800;
+}
+
+/* Orders List Dark Mode */
+body.dark-mode .order-card {
+    background-color: #333;
+    border-color: #444;
+}
+
+body.dark-mode .order-header {
+    border-bottom-color: #444;
+}
+
+body.dark-mode .order-header h3 {
+    color: #fff;
+}
+
+body.dark-mode .order-details p {
+    color: #ccc;
+}
+
+body.dark-mode .order-items-table th {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .order-items-table td {
+    border-bottom-color: #444;
+    color: #ddd;
+}
+
+/* Product List Dark Mode */
+body.dark-mode .product-item {
+    background-color: #333;
+    border-color: #444;
+}
+
+body.dark-mode .product-item h4 {
+    color: #fff;
+}
+
+body.dark-mode .product-item p {
+    color: #ccc;
+}
+
+/* Theme Toggle Button Position for Admin */
+.theme-toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 120px;
+    /* Positioned to the left of Logout button */
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+    z-index: 100;
+}
+
+body.dark-mode .theme-toggle-btn {
+    color: #f0f0f0;
+}
+
+.theme-toggle-btn:hover {
+    color: #ff9800;
+}
+
+/* Toggle Logic for Admin Button */
+.theme-toggle-btn .fa-sun {
+    display: none;
+}
+
+body.dark-mode .theme-toggle-btn .fa-moon {
+    display: none;
+}
+
+body.dark-mode .theme-toggle-btn .fa-sun {
+    display: block;
+    color: #FFD700;
+}
+
+body.dark-mode .status-control select {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+body.dark-mode .status-control select option {
+    background-color: #333;
+    color: #fff;
+}

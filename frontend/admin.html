@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Girl's Fashion</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <a href="index.html" class="home-btn" title="Go to Home">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <button id="dark-mode-toggle" class="theme-toggle-btn" title="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <button id="admin-logout-btn" class="logout-btn">
+        <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+
+    <main class="admin-container">
+        <h1 class="dashboard-title">Admin Dashboard</h1>
+
+        <!-- Tab Navigation -->
+        <div class="admin-tabs">
+            <button class="tab-btn active" onclick="switchTab('section-upload')">Upload Product</button>
+            <button class="tab-btn" onclick="switchTab('section-orders')">Order Management</button>
+            <button class="tab-btn" onclick="switchTab('section-products')">Product List</button>
+        </div>
+
+        <section id="section-upload" class="admin-section active-section">
+            <h2 class="section-title"><i class="fas fa-cloud-upload-alt"></i> Upload Product</h2>
+            <form id="product-upload-form" class="admin-form">
+                <div class="form-group">
+                    <label>Product Title</label>
+                    <input type="text" name="name" required placeholder="Enter product name">
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select name="category" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="Mens Shopping">Mens Shopping</option>
+                        <option value="Womens Fashion">Womens Fashion</option>
+                        <option value="Gadgets & Electronics">Gadgets & Electronics</option>
+                        <option value="Home Decor">Home Decor</option>
+                        <option value="Watch">Watch</option>
+                        <option value="Women Clothing">Women Clothing</option>
+                        <option value="Saree">Saree</option>
+                        <option value="Shalwar Kameez">Shalwar Kameez</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="description" rows="3" required placeholder="Product details..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Product Image</label>
+                    <input type="file" name="image" accept="image/*" required>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Regular Price</label>
+                        <input type="number" name="regularPrice" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Offer Price (Optional)</label>
+                        <input type="number" name="offerPrice" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="number" name="stock" value="1" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Upload Product</button>
+            </form>
+        </section>
+
+        <section id="section-orders" class="admin-section">
+            <h2 class="section-title"><i class="fas fa-shopping-cart"></i> Order Management</h2>
+            <div id="orders-list" class="orders-container">
+                <p class="loading-text">Loading orders...</p>
+            </div>
+        </section>
+
+        <section id="section-products" class="admin-section">
+            <h2 class="section-title"><i class="fas fa-trash"></i> Product List</h2>
+            <div id="products-delete-list" class="products-list">
+                <p class="loading-text">Loading products...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/global.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

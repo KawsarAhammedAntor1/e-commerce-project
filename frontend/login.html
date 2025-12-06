@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girl's Fashion - Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="overlay" id="overlay"></div>
+    <nav class="side-nav" id="side-nav">
+        <div class="side-nav-header">
+            <h2 class="side-nav-logo">Girl's Fashion</h2>
+            <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="side-nav-list">
+            <li><a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+            <li><a href="profile.html"><i class="fas fa-user"></i> <span>Profile</span></a></li>
+            <li><a href="product.html"><i class="fas fa-box"></i> <span>Product</span></a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> <span>Contact Us</span></a></li>
+            <li><a href="login.html"><i class="fas fa-user"></i> <span>Login / Sign Up</span></a></li>
+            <li><a href="admin_login.html" id="side-nav-admin-link"><i class="fas fa-user-shield"></i>
+                    <span>Admin</span></a></li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <div class="header-top">
+            <div class="header-left">
+                <button class="header-icon" id="menu-btn"><i class="fas fa-bars"></i></button>
+                <h1 class="header-logo">Girl's Fashion</h1>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="profile.html">Profile</a>
+                <a href="product.html">Product</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+                <a href="admin_login.html">Admin</a>
+            </nav>
+
+            <div class="header-right">
+                <button class="header-icon" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                </button>
+                <a href="cart.html" class="header-icon cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+        <div class="header-search">
+            <input type="text" placeholder="Search Product...">
+            <button class="search-btn">Search</button>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" style="display: none;"></div>
+
+    <main class="main-content">
+        <div id="main-page-content">
+            <div class="login-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="signup">Sign Up</button>
+                </div>
+
+                <div class="form-container active" id="login">
+                    <form class="login-form" autocomplete="on">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" autocomplete="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" autocomplete="current-password" required>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                        <button type="submit" class="confirm-order-btn">Login</button>
+                    </form>
+                </div>
+
+                <div class="form-container" id="signup">
+                    <form class="signup-form">
+                        <div class="form-group">
+                            <label for="signup-name">Full Name</label>
+                            <input type="text" id="signup-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-email">Email</label>
+                            <input type="email" id="signup-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <input type="password" id="signup-password" minlength="6" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-confirm-password">Confirm Password</label>
+                            <input type="password" id="signup-confirm-password" minlength="6" required>
+                        </div>
+                        <button type="submit" class="confirm-order-btn">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reset Password</h2>
+                <span class="close-modal-btn" id="close-forgot-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <!-- Step 1: Email Input -->
+                <div id="forgot-step-1">
+                    <p>Enter your email address to receive an OTP.</p>
+                    <div class="form-group">
+                        <input type="email" id="forgot-email" placeholder="Enter your email" required
+                            style="width: 100%; padding: 10px; margin-top: 10px;">
+                    </div>
+                    <button id="send-otp-btn" class="confirm-order-btn">Send OTP</button>
+                </div>
+
+                <!-- Step 2: OTP & New Password -->
+                <div id="forgot-step-2" style="display: none;">
+                    <p>Enter the OTP sent to your email and your new password.</p>
+                    <div class="form-group">
+                        <input type="text" id="forgot-otp" placeholder="Enter 6-digit OTP" required
+                            style="width: 100%; padding: 10px; margin-top: 10px;">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="new-password" placeholder="New Password" required
+                            style="width: 100%; padding: 10px; margin-top: 10px;">
+                    </div>
+                    <button id="reset-password-btn" class="confirm-order-btn">Reset Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="category.html" class="nav-item"><i class="fas fa-th-large"></i> <span>Category</span></a>
+        <a href="https://www.facebook.com/GirlsFashionBD2" class="nav-item"><i class="fas fa-comment-dots"></i>
+            <span>Message</span></a>
+        <a href="index.html" class="nav-item home-button"><i class="fas fa-home"></i></a>
+        <a href="checkout.html" class="nav-item"><i class="fas fa-shopping-bag"></i> <span>Cart</span></a>
+        <a href="login.html" class="nav-item"><i class="fas fa-user"></i> <span>Login</span></a>
+    </nav>
+
+    <script src="js/global.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

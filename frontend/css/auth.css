@@ -1,0 +1,327 @@
+/* Authentication Styles (Login / Sign Up) */
+
+/* Container */
+.login-container {
+    background-color: var(--white-color);
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* Tab Navigation */
+.tab-buttons {
+    display: flex;
+    margin-bottom: 2rem;
+    /* Create the continuous bottom border effect */
+    position: relative;
+}
+
+/* Continuous line for the tabs */
+.tab-buttons::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    /* Light grey continuous line */
+    z-index: 1;
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #777;
+    /* Grey for inactive */
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    /* Sit above the grey line */
+    transition: color 0.3s ease;
+}
+
+.tab-btn.active {
+    color: var(--primary-orange);
+    /* Orange text */
+}
+
+/* The active orange underline */
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    /* Slightly thicker active line */
+    background-color: var(--primary-orange);
+}
+
+/* Forms */
+.form-container {
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    /* Comfortable padding */
+    border: 1px solid #ddd;
+    /* Light border */
+    border-radius: 6px;
+    /* Rounded corners */
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    outline: none;
+    background-color: #fff;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-orange);
+    /* Orange focus border */
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 0.95rem;
+    color: var(--primary-orange);
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: -0.5rem;
+    /* Pull it slightly closer to input if needed */
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Button Styling (Green, Full Width) */
+.confirm-order-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.confirm-order-btn:hover {
+    background-color: #007a00;
+    /* Darker green on hover */
+    transform: translateY(-1px);
+}
+
+.confirm-order-btn:active {
+    transform: translateY(0);
+}
+
+/* Authentication Styles (Login / Sign Up) */
+
+/* Container */
+.login-container {
+    background-color: var(--white-color);
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* Tab Navigation */
+.tab-buttons {
+    display: flex;
+    margin-bottom: 2rem;
+    /* Create the continuous bottom border effect */
+    position: relative;
+}
+
+/* Continuous line for the tabs */
+.tab-buttons::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    /* Light grey continuous line */
+    z-index: 1;
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #777;
+    /* Grey for inactive */
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    /* Sit above the grey line */
+    transition: color 0.3s ease;
+}
+
+.tab-btn.active {
+    color: var(--primary-orange);
+    /* Orange text */
+}
+
+/* The active orange underline */
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    /* Slightly thicker active line */
+    background-color: var(--primary-orange);
+}
+
+/* Forms */
+.form-container {
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    /* Comfortable padding */
+    border: 1px solid #ddd;
+    /* Light border */
+    border-radius: 6px;
+    /* Rounded corners */
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    outline: none;
+    background-color: #fff;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-orange);
+    /* Orange focus border */
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 0.95rem;
+    color: var(--primary-orange);
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: -0.5rem;
+    /* Pull it slightly closer to input if needed */
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Button Styling (Green, Full Width) */
+.confirm-order-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.confirm-order-btn:hover {
+    background-color: #007a00;
+    /* Darker green on hover */
+    transform: translateY(-1px);
+}
+
+.confirm-order-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 1.5rem 1rem;
+        box-shadow: none;
+        /* Often cleaner on very small screens to remove heavy shadow */
+    }
+}
+
+/* Desktop: Make form much wider */
+@media (min-width: 768px) {
+    .login-container {
+        max-width: 700px;
+        /* Increased from 450px */
+        width: 100%;
+        padding: 3rem;
+        /* More spacing for larger screens */
+    }
+
+    .form-group input {
+        width: 100%;
+        /* Ensure inputs fill the new width */
+    }
+
+    .confirm-order-btn {
+        width: 100%;
+        /* Ensure button fills the new width */
+    }
+}

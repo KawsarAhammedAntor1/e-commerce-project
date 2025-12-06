@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Girl's Fashion - Contact Us</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Reusing home.css for general styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        /* Emergency Inline Styles from index.html, adjusted for Contact Us page */
+        .section-container {
+            padding: 15px;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .section-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Basic styling for Contact Us content */
+        .contact-content {
+            max-width: 500px;
+            /* Max-width for the form */
+            margin: 20px auto;
+            padding: 20px;
+            background: var(--white-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            /* Center the title */
+        }
+
+        .contact-content h2 {
+            font-size: 2em;
+            color: var(--dark-text);
+            margin-bottom: 1em;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+            /* Align form labels/inputs left */
+        }
+
+        .contact-form label {
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+            /* Include padding in width */
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            /* Allow vertical resizing */
+            min-height: 100px;
+        }
+
+        .contact-form button {
+            background-color: var(--primary-orange);
+            color: var(--white-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #e65c00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="overlay" id="overlay"></div>
+    <nav class="side-nav" id="side-nav">
+        <div class="side-nav-header">
+            <h2 class="side-nav-logo">Girl's Fashion</h2>
+            <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="side-nav-list">
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="product.html">
+                    <i class="fas fa-box"></i>
+                    <span>Product</span>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact Us</span>
+                </a>
+            </li>
+            <li>
+                <a href="login.html">
+                    <i class="fas fa-user"></i>
+                    <span>Login / Sign Up</span>
+                </a>
+            </li>
+            <li>
+                <a href="admin_login.html" id="side-nav-admin-link">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Admin</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <div class="header-top">
+            <div class="header-left">
+                <button class="header-icon" id="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="header-logo">Girl's Fashion</h1>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="profile.html">Profile</a>
+                <a href="product.html">Product</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+                <a href="admin_login.html">Admin</a>
+            </nav>
+
+            <div class="header-right">
+                <button class="header-icon" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="cart.html" class="header-icon cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+        <div class="header-search">
+            <input type="text" placeholder="Search Product...">
+            <button class="search-btn">Search</button>
+        </div>
+    </header>
+
+    <div id="search-overlay" style="display:none;"></div>
+
+    <main class="main-content">
+        <div id="main-page-content">
+            <section class="contact-content">
+                <h2>Contact Us</h2>
+                <form class="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Category</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-comment-dots"></i>
+            <span>Message</span>
+        </a>
+        <a href="index.html" class="nav-item home-button">
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="checkout.html" class="nav-item">
+            <i class="fas fa-shopping-bag"></i>
+            <span>Cart</span>
+        </a>
+        <a href="login.html" class="nav-item" id="bottom-nav-login">
+            <i class="fas fa-user"></i>
+            <span>Login</span>
+        </a>
+    </nav>
+
+    <script src="js/global.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>

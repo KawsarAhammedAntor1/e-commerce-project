@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Girl's Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-top">
+            <div class="header-left">
+                <h1 class="header-logo">Girl's Fashion</h1>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="profile.html">Profile</a>
+                <a href="product.html">Product</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+                <a href="admin_login.html">Admin</a>
+            </nav>
+
+            <div class="header-right">
+                <button class="header-icon" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="cart.html" class="header-icon cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    </div>
+    <div class="header-search">
+        <input type="text" placeholder="Search Product...">
+        <button class="search-btn">Search</button>
+    </div>
+    </header>
+
+    <div id="search-overlay" style="display:none;"></div>
+
+    <div class="main-content">
+        <div id="main-page-content">
+            <h1 class="section-title">My Profile</h1>
+
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h2>Welcome, <span id="profile-name">Loading...</span></h2>
+                <p><i class="fas fa-envelope"></i> <span id="profile-email">...</span></p>
+                <button id="profile-logout-button" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+
+            <section class="my-orders-section">
+                <h2 class="section-title"><i class="fas fa-shopping-bag"></i> My Orders</h2>
+
+                <div id="my-orders-container" class="orders-list-container">
+                    <p style="text-align: center; color: #aaa;">Loading your order history...</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="category.html" class="nav-item"><i class="fas fa-th-large"></i> <span>Category</span></a>
+        <a href="index.html" class="nav-item home-button"><i class="fas fa-home"></i></a>
+        <a href="checkout.html" class="nav-item"><i class="fas fa-shopping-bag"></i> <span>Cart</span></a>
+        <a href="profile.html" class="nav-item active"><i class="fas fa-user"></i> <span>Profile</span></a>
+    </nav>
+
+    <script src="js/global.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+
+</html>
